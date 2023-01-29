@@ -82,14 +82,16 @@ def run_knn(points, times, max_k, ans):
         test_errors += test_errors_final / times
     different = np.abs(train_errors - test_errors)
 
-    print("true mistake:")
-    print("k\t\tp = 1\t\tp = 2\t\tp = inf")
-    for i in range(len(K)):
-        print(f"{K[i]}\t\t{train_errors[i][0]:.4f}\t\t{train_errors[i][1]:.4f}\t\t{train_errors[i][2]:.4f}")
     print("\nempirical mistake:")
     print("k\t\tp = 1\t\tp = 2\t\tp = inf")
     for i in range(len(K)):
         print(f"{K[i]}\t\t{test_errors[i][0]:.4f}\t\t{test_errors[i][1]:.4f}\t\t{test_errors[i][2]:.4f}")
+        
+    print("true mistake:")
+    print("k\t\tp = 1\t\tp = 2\t\tp = inf")
+    for i in range(len(K)):
+        print(f"{K[i]}\t\t{train_errors[i][0]:.4f}\t\t{train_errors[i][1]:.4f}\t\t{train_errors[i][2]:.4f}")
+    
     print("\nThe difference between empirical and true mistake:")
     print("k\t\tp = 1\t\tp = 2\t\tp = inf")
     for i in range(len(K)):
